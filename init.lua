@@ -1,2 +1,2 @@
 require("owl")
-print("hello world")
+--print("hello world")
