@@ -46,5 +46,32 @@ return require('packer').startup(function(use)
 		 {'rafamadriz/friendly-snippets'}, -- Optional
 	 }
  }
+ -- latex 
+ -- use('lervag/vimtex')
+ -- status line 
+ use {
+     'nvim-lualine/lualine.nvim',
+     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+ }
+ -- auto pairs
+ use {
+     "windwp/nvim-autopairs",
+     config = function() require("nvim-autopairs").setup {} end
+ }
+ -- auto tag 
+ use("windwp/nvim-ts-autotag")
+ -- lspsaga
+ use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    requires = {
+        {"nvim-tree/nvim-web-devicons"},
+        --Please make sure you install markdown and markdown_inline parser
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+})
 end)
 
